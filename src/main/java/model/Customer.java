@@ -16,7 +16,7 @@ public class Customer {
     public void setCustomerId(int customerId){
         this.customerId=customerId;
     }
-    public String getNmae(){
+    public String getName(){
         return name;
     }
     public void setName(String name){
