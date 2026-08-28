@@ -1,5 +1,19 @@
+import java.sql.Connection;
+import util.DBConnection;
+
 public class Main {
+
     public static void main(String[] args) {
-        System.out.println("Inventory & Billing System Started!");
+
+        try {
+            Connection connection = DBConnection.getConnection();
+
+            System.out.println("Database connected successfully!");
+
+            connection.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
