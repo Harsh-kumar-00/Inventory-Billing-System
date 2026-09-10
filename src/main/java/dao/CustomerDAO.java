@@ -50,9 +50,12 @@ public class CustomerDAO {
             ps.setString(2, customer.getPhone());
             ps.setInt(3, customer.getCustomerId());
 
-            ps.executeUpdate();
-
-            System.out.println("Customer updated successfully!");
+            int rowsAffected = ps.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Customer updated successfully!");
+            } else {
+                System.out.println("Customer not found!");
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -69,10 +72,14 @@ public class CustomerDAO {
 
             ps.setInt(1, customerId);
 
-            ps.executeUpdate();
+            int rowsAffected = ps.executeUpdate();
 
-            System.out.println("Customer deleted successfully!");
-
+            if (rowsAffected > 0) {
+                System.out.println("Customer deleted successfully!");
+            } else {
+                System.out.println("Customer not found!");
+            }
+            
         } catch (SQLException e) {
             e.printStackTrace();
         }

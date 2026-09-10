@@ -2,6 +2,7 @@ package service;
 
 import dao.CustomerDAO;
 import model.Customer;
+import java.util.List;
 
 public class CustomerService {
 
@@ -26,4 +27,9 @@ public class CustomerService {
     public Customer findCustomer(int customerId) {
         return customerDAO.findCustomer(customerId);
     }
+
+    public List<Customer> getAllCustomers(){
+        return customerDAO.getAllCustomers();
+    }
+    
 }
